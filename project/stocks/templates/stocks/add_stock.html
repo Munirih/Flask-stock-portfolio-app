@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add a stock:</h2>
+<form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+    <label for="stocksymbol">Stock Symbol <i>(required)</i>:</label>
+    <input type="text" id="stocksymbol" name="stock_symbol" required pattern="[A-Z]{1,5}"/>
+    <br>
+    <label for="numberOfShares">Number of Shares <i>(required)</i>:</label>
+    <input type="text" id="numberOfShares" name="number_of_shares" required/>
+    <br>
+    <label for="purchasePrice">Purchase Price <i>(required)</i> ($):</label>
+    <input type="text" id="purchasePrice" name="purchase_price" required />
+    <br>
+    <label for="purchaseDate">Purchase Date (<i>required</i>):</label> 
+    <input type="date" id="purchaseDate" name="purchase_date"  placeholder="YYYY-MM-DD" required>  
+  <br>
+    <input type="submit">
+</form>
+{% endblock %}
