@@ -23,7 +23,7 @@ class Config(object):
     MAIL_PASSWORD = os.getenv('MAIL_PASSWORD', default='FlaskCourseTest@2020')
     MAIL_DEFAULT_SENDER = os.getenv('MAIL_USERNAME', default='flaskcoursetest@gmail.com')
     ALPHA_VANTAGE_API_KEY = os.getenv('ALPHA_VANTAGE_API_KEY', default='9FDV49MCJYZY8J19')
-
+    LOG_TO_STDOUT = os.getenv('LOG_TO_STDOUT', default=False)
 class ProductionConfig(Config):
     FLASK_ENV = 'production'
     
